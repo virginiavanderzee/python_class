@@ -15,18 +15,25 @@ def calculate(first_number, second_number, operator):
        result = OUT_OF_BOUNDS
 
     return result
-first_number = input("What is the first number? ")
-first_number = int(first_number)
+more_input = True
+while more_input:
+    first_number = input("What is the first number? ")
+    first_number = int(first_number)
 
-second_number = input("What is the second number? ")
-second_number = int(second_number)
+    second_number = input("What is the second number? ")
+    second_number = int(second_number)
 
-operator = input("What operation do you want me to do (+, -, *, /,)?")
-operator = operator.strip()
+    operator = input("What operation do you want me to do (+, -, *, /,)?")
+    operator = operator.strip()
 
-result = calculate (first_number, second_number, operator)
+    result = calculate (first_number, second_number, operator)
 
-if result == OUT_OF_BOUNDS:
-    print("you need a valid operator (+, -, *, /)")
-else:
-    print(result)
+    if result == OUT_OF_BOUNDS:
+        print("you need a valid operator (+, -, *, /)")
+    else:
+        print(result)
+
+    if input("Another calculation (y/n)")== "y":
+        more_input = True
+    else:
+        more_input = False
